@@ -1,6 +1,7 @@
-# whatsapp
+# whatsapp Clone
 
-A new Flutter project.
+A new Flutter project. Where I made the UI clone of WhatsApp. 
+<img src = "whatsapp_clone.jpg">
 
 ## Getting Started
 

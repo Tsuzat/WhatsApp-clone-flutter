@@ -28,6 +28,7 @@ class _ChatState extends State<Chat> {
                     image: AssetImage(
                       "assets/images/profile_pic.png",
                     ),
+                    filterQuality: FilterQuality.low,
                     fit: BoxFit.fill,
                   ),
                 ),
