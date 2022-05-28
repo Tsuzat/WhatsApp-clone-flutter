@@ -69,6 +69,7 @@ class _ChatState extends State<Chat> {
                               Icon(
                                 Icons.done_all,
                                 color: Color.fromRGBO(89, 187, 230, 1),
+                                size: 16,
                               ),
                               SizedBox(
                                 width: 5,

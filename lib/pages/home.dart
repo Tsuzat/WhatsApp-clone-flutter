@@ -80,7 +80,7 @@ class Home extends StatelessWidget {
           children: <Widget>[
             Center(
               child: Text(
-                "Camera Feild",
+                "Camera Field",
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,
