@@ -1,6 +1,7 @@
 # whatsapp Clone
 
 A new Flutter project. Where I made the UI clone of WhatsApp. 
+
 <img src = "whatsapp_clone.jpg" height = "500px">
 
 ## Getting Started
