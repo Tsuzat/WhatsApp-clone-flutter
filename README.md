@@ -6,6 +6,7 @@ A new Flutter project. Where I made the UI clone of WhatsApp.
     <img src = "Capture.PNG" height = "500px">
     <img src = "Capture1.PNG" height = "500px">
 </p>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
