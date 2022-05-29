@@ -2,8 +2,8 @@
 
 A new Flutter project. Where I made the UI clone of WhatsApp. 
 
-<img src = "Capture.png" height = "400px">
-<img src = "Capture1.png" height = "400px">
+<img src = "Capture.PNG" height = "400px">
+<img src = "Capture1.PNG" height = "400px">
 
 ## Getting Started
 
