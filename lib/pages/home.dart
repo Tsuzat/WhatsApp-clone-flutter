@@ -1,5 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsapp/pages/widgets/chat.dart';
+import 'package:whatsapp/utils/theme.dart';
+import 'package:whatsapp/widgets/calls.dart';
+import 'package:whatsapp/widgets/camera.dart';
+import 'package:whatsapp/widgets/chats.dart';
+import 'package:whatsapp/widgets/status.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,15 +15,10 @@ class Home extends StatelessWidget {
       initialIndex: 1,
       length: 4,
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(18, 27, 34, 1),
         appBar: AppBar(
-          backgroundColor: const Color.fromRGBO(31, 44, 52, 1),
-          title: const Text(
+          title: Text(
             "WhatsApp",
-            style: TextStyle(
-              fontSize: 20,
-              color: Color.fromRGBO(133, 150, 160, 1),
-            ),
+            style: MyTextStyle.heading1(),
           ),
           actions: <Widget>[
             IconButton(
@@ -42,71 +42,34 @@ class Home extends StatelessWidget {
             indicatorColor: Color.fromRGBO(5, 166, 131, 1),
             indicatorWeight: 3,
             labelColor: Color.fromRGBO(5, 166, 131, 1),
+            labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             unselectedLabelColor: Color.fromRGBO(133, 150, 160, 1),
             tabs: <Widget>[
               Tab(
-                icon: Icon(
-                  Icons.camera_alt,
-                ),
+                icon: Icon(CupertinoIcons.camera_fill),
               ),
               Tab(
-                child: Text(
-                  "CHATS",
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
+                child: Text("CHATS"),
               ),
               Tab(
-                child: Text(
-                  "STATUS",
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
+                child: Text("STATUS"),
               ),
               Tab(
-                child: Text(
-                  "CALLS",
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
+                child: Text("CALLS"),
               ),
             ],
           ),
         ),
         body: const TabBarView(
           children: <Widget>[
-            Center(
-              child: Text(
-                "Camera Field",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            //Widget for Camera
+            Camera(),
             // Widget for CHATS tab
-            Chat(),
-            Center(
-              child: Text(
-                "Status",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            Center(
-              child: Text(
-                "Calls",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            Chats(),
+            // Widget for Status tab
+            Status(),
+            // Widget for Calls
+            Calls()
           ],
         ),
         floatingActionButton: FloatingActionButton(

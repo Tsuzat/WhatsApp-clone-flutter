@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/utils/theme.dart';
 import 'pages/home.dart';
 
 void main() {
@@ -10,9 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: MyTheme.darkTheme(),
       title: "WhatApp",
-      home: Home(),
+      home: const Home(),
     );
   }
 }
