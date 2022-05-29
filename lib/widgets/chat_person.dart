@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/models/chat.dart';
+import 'package:whatsapp/widgets/profile_pic_dialog.dart';
 
 class ChatPerson extends StatelessWidget {
   final Chat item;
@@ -12,7 +13,10 @@ class ChatPerson extends StatelessWidget {
       onTap: () {},
       leading: InkWell(
         onTap: () {
-          //* TO BE IMPLEMENT
+          showDialog(
+            context: context,
+            builder: (context) => profilePicDialog(item),
+          );
         },
         child: CircleAvatar(
           radius: 25,
