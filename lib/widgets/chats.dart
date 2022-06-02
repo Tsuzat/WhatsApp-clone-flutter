@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'dart:convert';
 import 'package:whatsapp/models/chat.dart';
+import 'package:whatsapp/utils/chat_persons.dart';
 import 'package:whatsapp/widgets/chat_person.dart';
 
 class Chats extends StatefulWidget {
@@ -18,34 +17,42 @@ class _ChatsState extends State<Chats> {
     getData();
   }
 
-  getData() async {
+  void getData() async {
     // await Future.delayed(
-    //   const Duration(seconds: 2),
+    //   const Duration(seconds: 1),
     // );
-    var encodedJson = await rootBundle.loadString("assets/data/chat_data.json");
-    var decodedJson = jsonDecode(encodedJson);
     ChatLog.items =
-        List.from(decodedJson).map<Chat>((item) => Chat.fromMap(item)).toList();
+        List.from(chatData).map<Chat>((item) => Chat.fromMap(item)).toList();
     if (!mounted) return;
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 8.0,
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 8.0,
+        ),
+        child: ChatLog.items.isNotEmpty
+            ? ListView.builder(
+                itemCount: ChatLog.items.length,
+                itemBuilder: (context, index) {
+                  return ChatPerson(item: ChatLog.items[index]);
+                },
+              )
+            : const Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
-      child: ChatLog.items.isNotEmpty
-          ? ListView.builder(
-              itemCount: ChatLog.items.length,
-              itemBuilder: (context, index) {
-                return ChatPerson(item: ChatLog.items[index]);
-              },
-            )
-          : const Center(
-              child: CircularProgressIndicator(),
-            ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: const Color.fromRGBO(5, 166, 131, 1),
+        child: const Icon(
+          Icons.chat_sharp,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyTheme {
   static ThemeData darkTheme() => ThemeData(
+      primarySwatch: Colors.grey,
         scaffoldBackgroundColor: const Color.fromRGBO(18, 27, 34, 1),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color.fromRGBO(31, 44, 52, 1),

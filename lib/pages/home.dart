@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/utils/theme.dart';
@@ -84,11 +85,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           // Widget for Calls
           Calls()
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: const Color.fromRGBO(0, 168, 132, 1),
-        child: const Icon(Icons.chat),
       ),
     );
   }
